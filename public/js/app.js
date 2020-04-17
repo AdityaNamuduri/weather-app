@@ -11,8 +11,10 @@ weatherForm.addEventListener('submit', (e) => {
     const location = searchInput.value
     messageError.textContent = 'Loading...'
     messageSuccess.textContent = ''
+    //const port = process.env.PORT || 3000
+    //http://localhost:'+port+
 
-    fetch('http://localhost:3000/weather?address='+location).then((response) => {
+    fetch('/weather?address='+location).then((response) => {
         response.json().then((data) => {
             if(data.error){
                 messageError.textContent = data.error
