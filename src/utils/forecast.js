@@ -15,8 +15,8 @@ const forecast = ({latitude, longitude}, callback) => {
             callback('Please try with another input', undefined)
         } else {
             callback(undefined, {
-                temperature: body.current.temperature,
-                feelslike: body.current.feelslike,
+                temperature: 'Temperature today is : '+body.current.temperature,
+                feelslike: 'It feels like : '+body.current.feelslike,
                 weather_description: body.current.weather_descriptions[0]
             })
         }
